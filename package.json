@@ -4,7 +4,31 @@
   "description": "follows the book",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test"
+    "standard": "standard --fix",
+    "prebuild": "rimraf -rf dist/ && npm run standard",
+    "build": "babel src -d dist",
+    "serve": "npm run build && node dist/index.js",
+    "test": "npm run tape",
+    "tape": "tape",
+    "watch": "nodemon -w src --exec npm run serve"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "standard --fix --staged --pattern '**/*.*(js)' && npm run test"
+    }
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ],
+    "plugins": []
   },
   "repository": {
     "type": "git",
@@ -18,5 +42,16 @@
   "bugs": {
     "url": "https://github.com/HaQadosch/packtpub_entreprisejsapplication/issues"
   },
-  "homepage": "https://github.com/HaQadosch/packtpub_entreprisejsapplication#readme"
+  "homepage": "https://github.com/HaQadosch/packtpub_entreprisejsapplication#readme",
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.0",
+    "husky": "^4.2.3",
+    "nodemon": "^2.0.2",
+    "rimraf": "^3.0.2",
+    "standard": "^14.3.3",
+    "tape": "^4.13.2"
+  }
 }
