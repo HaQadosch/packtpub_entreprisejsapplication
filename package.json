@@ -1,0 +1,22 @@
+{
+  "name": "hobgoblin",
+  "version": "0.1.0",
+  "description": "follows the book",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HaQadosch/packtpub_entreprisejsapplication.git"
+  },
+  "keywords": [
+    "goblins"
+  ],
+  "author": "haqadosch <haqadosch@pm.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HaQadosch/packtpub_entreprisejsapplication/issues"
+  },
+  "homepage": "https://github.com/HaQadosch/packtpub_entreprisejsapplication#readme"
+}
