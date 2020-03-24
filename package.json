@@ -10,7 +10,8 @@
     "serve": "npm run build && node dist/index.js",
     "test": "npm run tape",
     "tape": "tape",
-    "watch": "nodemon -w src --exec npm run serve"
+    "watch": "nodemon -w src --exec npm run serve",
+    "test:e2e": "npx cucumber-js spec/cucumber/features --require spec/cucumber/steps"
   },
   "husky": {
     "hooks": {
@@ -48,6 +49,7 @@
     "@babel/core": "^7.9.0",
     "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.9.0",
+    "cucumber": "^6.0.5",
     "husky": "^4.2.3",
     "nodemon": "^2.0.2",
     "rimraf": "^3.0.2",
