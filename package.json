@@ -7,11 +7,11 @@
     "standard": "standard --fix",
     "prebuild": "rimraf -rf dist/ && npm run standard",
     "build": "babel src -d dist",
-    "serve": "npm run build && node dist/index.js",
+    "serve": "npm run build && dotenv node dist/index.js",
     "test": "npm run tape",
     "tape": "tape",
     "watch": "nodemon -w src --exec npm run serve",
-    "test:e2e": "npx cucumber-js spec/cucumber/features --require spec/cucumber/steps"
+    "test:e2e": "dotenv cucumber-js -- spec/cucumber/features --require spec/cucumber/steps"
   },
   "husky": {
     "hooks": {
@@ -50,10 +50,12 @@
     "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.9.0",
     "cucumber": "^6.0.5",
+    "dotenv-cli": "^3.1.0",
     "husky": "^4.2.3",
     "nodemon": "^2.0.2",
     "rimraf": "^3.0.2",
     "standard": "^14.3.3",
+    "superagent": "^5.2.2",
     "tape": "^4.13.2"
   }
 }
